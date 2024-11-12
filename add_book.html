@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h2>Add New Book</h2>
+
+{% if errors %}
+<div class="error">
+    <ul>
+        {% for error in errors %}
+        <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+<form method="POST">
+    <label>Title*:
+        <input type="text" name="title" required>
+    </label><br><br>
+    <label>Author*:
+        <input type="text" name="author" required>
+    </label><br><br>
+    <label>Genre:
+        <input type="text" name="genre">
+    </label><br><br>
+    <label>Publication Date:
+        <input type="date" name="publication_date">
+    </label><br><br>
+    <label>ISBN*:
+        <input type="text" name="isbn" required>
+    </label><br><br>
+    <button type="submit">Add Book</button>
+</form>
+
+{% endblock %}
